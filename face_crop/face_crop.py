@@ -12,7 +12,7 @@ from time import gmtime, strftime
 # Globals
 
 MIN_SIZE = (20, 20)
-IMAGE_SCALE = 2
+IMAGE_SCALE = 1
 HAAR_SCALE = 1.2
 MIN_NEIGHBORS = 2
 HAAR_FLAGS = 0
@@ -58,15 +58,13 @@ class batchImag:
         self.data[image_name]=image.faces
     
   def printDataJSON(self):
-    size = 100, 100
+    size = 200, 200
     data = [] 
     for key in self.data.keys():
       im = Image.open(key)
       for crop in self.data[key]:
         time = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
-        im.crop((crop['x'],crop['y'],crop['x']+crop['width'],crop['y']+crop['height']))
-        print key
-        im.resize(size).save(key)
+        im.crop((crop['x'],crop['y'],crop['x']+crop['width'],crop['y']+crop['height'])).resize(size).save(key)
         data.append(key)
     print(json.dumps(data))
 
