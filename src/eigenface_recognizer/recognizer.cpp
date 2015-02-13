@@ -39,7 +39,7 @@ int main(int argc, const char *argv[]) {
     //double confidence = 0.0;
     //model->predict(testSample, predictedLabel, confidence);
     //
-    string result_message = format("Predicted class = %d", predictedLabel);
-    //cout << predictedLabel << endl;
+    string result_message = format("Predicted Label = %d", predictedLabel);
+    cout << result_message << endl;
     return predictedLabel;
 }
