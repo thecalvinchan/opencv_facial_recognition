@@ -1,5 +1,29 @@
 # Eigenface Facial Recognition with OpenCV
 
+## Dependencies
+
+- OpenCV (http://opencv.org/)
+
+To install OpenCV, I suggest following the directions [here](http://docs.opencv.org/doc/tutorials/introduction/linux_install/linux_install.html#linux-installation)
+
+If you're on OS X, you can also use [brew](https://jjyap.wordpress.com/2014/05/24/installing-opencv-2-4-9-on-mac-osx-with-python-support/)
+
+    brew tap homebrew/science 
+    brew install opencv
+
+Try your respective package managers if you're on some other UNIX distribution.
+
+After you install OpenCV, it's important you put the directory to the Python
+scripts into your path, otherwise you won't be able to use the Python Wrapper.
+An easy way to do this is to symlink them into your existing Python path, or you
+can just add the new directories to your path.
+
+    cd /Library/Python/2.7/site-packages/
+    sudo ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+    sudo ln -s /usr/local/lib/python2.7/site-packages/cv.py cv.py
+    // Assuming you installed OpenCV into /usr/local
+    // If you used brew, it would actually be /usr/local/Cellar
+
 ## Compile and Build
 
     mkdir build
