@@ -31,13 +31,13 @@ int main(int argc, const char *argv[]) {
     // The following line predicts the label of a given
     // test image:
     Mat img = imread(string(argv[2]), CV_LOAD_IMAGE_GRAYSCALE);
-    int predictedLabel = model1->predict(img);
+    // int predictedLabel = model1->predict(img);
     //
     // To get the confidence of a prediction call the model with:
     //
-    //      int predictedLabel = -1;
-    //      double confidence = 0.0;
-    //      model->predict(testSample, predictedLabel, confidence);
+    int predictedLabel = -1;
+    double confidence = 0.0;
+    model->predict(testSample, predictedLabel, confidence);
     //
     string result_message = format("Predicted class = %d", predictedLabel);
     //cout << predictedLabel << endl;
